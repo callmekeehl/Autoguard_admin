@@ -52,7 +52,7 @@ class UtilisateurController extends Controller
         $validated = $request->validate([
             'nom' => 'required|string|max:255',
             'prenom' => 'required|string|max:255',
-            'email' => 'required|email|unique:utilisateurs|max:255',
+            'email' => 'required|email|max:255',
             'adresse' => 'nullable|string',
             'telephone' => 'nullable|string|max:15',
             'motDePasse' => 'required|string|max:255',

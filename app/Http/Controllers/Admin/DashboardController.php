@@ -36,6 +36,7 @@ class DashboardController extends Controller
                 'polices' => 0,
                 'garages' => 0,
                 'declarations' => 0,
+                'rdvs' => 0
             ];
         }
 
@@ -44,6 +45,7 @@ class DashboardController extends Controller
             'policesCount' => $stats['polices'],
             'garagesCount' => $stats['garages'],
             'declarationsCount' => $stats['declarations'],
+            'rdvsCount' => $stats['rdvs']
         ]);
     }
 

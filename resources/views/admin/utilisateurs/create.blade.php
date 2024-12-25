@@ -33,7 +33,7 @@
 
         <div class="form-group">
             <label for="mot_de_passe">Mot de Passe</label>
-            <input type="password" name="mot_de_passe" class="form-control" required>
+            <input type="password" name="motDePasse" class="form-control" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Créer</button>

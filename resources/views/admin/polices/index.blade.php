@@ -35,12 +35,12 @@
                     <td>{{ $police['adresseDepartement'] }}</td>
 
                     <td>
-                        <a href="{{ route('admin.polices.show', $police['utilisateurId']) }}" class="btn btn-info btn-sm">Voir</a>
-                        <a href="{{ route('admin.polices.edit', $police['utilisateurId']) }}" class="btn btn-warning btn-sm">Modifier</a>
+                        <a href="{{ route('admin.polices.show', $police['utilisateurId']) }}" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                        <a href="{{ route('admin.polices.edit', $police['utilisateurId']) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
                         <form action="{{ route('admin.polices.destroy', $police['utilisateurId']) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">Supprimer</button>
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')"><i class="fas fa-trash"></i></button>
                         </form>
                     </td>
                 </tr>

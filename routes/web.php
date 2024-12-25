@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\RdvController;
 use App\Http\Controllers\Admin\UtilisateurController;
 use App\Http\Controllers\Admin\PoliceController;
 use App\Http\Controllers\Admin\GarageController;
@@ -43,4 +44,7 @@ Route::prefix('admin')->middleware([AdminAuth::class])->group(function () {
 
     // Routes pour la gestion des déclarations
     Route::resource('declarations', DeclarationController::class, ['as' => 'admin']);
+
+    // Routes pour la gestion des Rendez-vous
+    Route::resource('rdvs', RdvController::class, ['as' => 'admin']);
 });

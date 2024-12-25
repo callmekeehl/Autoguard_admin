@@ -1,38 +1,44 @@
 
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
 
-<!-- Styles personnalisés -->
-<style>
-    /* Styles pour la sidebar */
-    .sidebar {
-        height: 100vh; /* Hauteur de la sidebar */
-        position: fixed; /* Fixe la position de la sidebar */
-        top: 0;
-        left: 0;
-        width: 200px; /* Largeur de la sidebar */
-        background-color: #343a40; /* Couleur de fond */
-        z-index: 1000;
-    }
+    <!-- CSS Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
 
-    .sidebar .nav-link {
-        color: #ffffff; /* Couleur du texte */
-    }
+    <!-- Styles personnalisés -->
+    <style>
+        /* Styles pour la sidebar */
+        .sidebar {
+            height: 100vh; /* Hauteur de la sidebar */
+            position: fixed; /* Fixe la position de la sidebar */
+            top: 0;
+            left: 0;
+            width: 250px; /* Largeur de la sidebar */
+            background-color: #343a40; /* Couleur de fond */
+            z-index: 1000;
+        }
 
-    .sidebar .nav-link:hover {
-        background-color: #007bff; /* Couleur de survol */
-    }
+        .sidebar .nav-link {
+            color: #ffffff; /* Couleur du texte */
+        }
 
-    /* Ajouter un margin-left au contenu principal */
-    .content {
-        margin-left: 250px; /* Largeur de la sidebar */
-        padding: 20px; /* Espacement */
-    }
-</style>
+        .sidebar .nav-link:hover {
+            background-color: #007bff; /* Couleur de survol */
+        }
 
+        /* Ajouter un margin-left au contenu principal */
+        .content {
+            margin-left: 250px; /* Largeur de la sidebar */
+            padding: 20px; /* Espacement */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar -->
 <div class="sidebar">
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -50,39 +56,43 @@
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
-        <!-- Divider -->
         <hr class="sidebar-divider my-0">
-        <!--Utilisateurs-->
+
+        <!-- Utilisateurs -->
         <li class="nav-item active">
             <a class="nav-link" href="{{ route('admin.utilisateurs.index') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-user"></i>
                 <span>Utilisateurs</span></a>
         </li>
 
-        <!--Polices-->
+        <!-- Polices -->
         <li class="nav-item active">
             <a class="nav-link" href="{{ route('admin.polices.index') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-shield-alt"></i>
                 <span>Polices</span></a>
         </li>
 
-        <!--Garages-->
+        <!-- Garages -->
         <li class="nav-item active">
             <a class="nav-link" href="{{ route('admin.garages.index') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-warehouse"></i>
                 <span>Garages</span></a>
         </li>
 
-        <!--Déclarations-->
+        <!-- Déclarations -->
         <li class="nav-item active">
             <a class="nav-link" href="{{ route('admin.declarations.index') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-file-alt"></i>
                 <span>Déclarations</span></a>
         </li>
 
 
-    </ul>
 
+    </ul>
+</div>
+
+<!-- Contenu Principal -->
+<div class="content">
     <!-- Topbar -->
     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -124,4 +134,16 @@
 
     </nav>
     <!-- End of Topbar -->
+
+    <!-- Page Content Here -->
+    <div class="container-fluid">
+        @yield('content')
+    </div>
 </div>
+
+<!-- JS Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>

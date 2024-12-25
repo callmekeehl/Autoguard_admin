@@ -82,6 +82,24 @@
 
         </div>
 
+        <!-- Rdv Card -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Rdv
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $rdvsCount }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Graphique des Statistiques -->
         <div class="row">
             <div class="col-xl-12 col-lg-12">
@@ -104,21 +122,25 @@
         const myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Utilisateurs', 'Polices', 'Garages', 'Déclarations'],
+                labels: ['Utilisateurs', 'Polices', 'Garages', 'Déclarations', 'Rdvs'],
                 datasets: [{
                     label: '# de chaque type',
-                    data: [{{ $utilisateursCount }}, {{ $policesCount }}, {{ $garagesCount }}, {{ $declarationsCount }}],
+                    data: [{{ $utilisateursCount }}, {{ $policesCount }}, {{ $garagesCount }}, {{ $declarationsCount }}, {{$rdvsCount}}],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
                         'rgba(255, 206, 86, 0.2)',
                         'rgba(75, 192, 192, 0.2)',
+                        'rgba(45, 150, 192, 0.2)',
+
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
                         'rgba(54, 162, 235, 1)',
                         'rgba(255, 206, 86, 1)',
                         'rgba(75, 192, 192, 1)',
+                        'rgb(15,39,152)',
+
                     ],
                     borderWidth: 1
                 }]
